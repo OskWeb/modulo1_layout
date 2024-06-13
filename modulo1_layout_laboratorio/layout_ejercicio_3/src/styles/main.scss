@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 80px 40px 80px 40px;
+    .nav {
+        
+        display: flex;
+        justify-content: space-between;
+        height: auto;
+        margin-top: 20px;
+        background-color: #006A7B;
+        color: #ffffff;
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+         }
+         :hover {
+            background-color: #2F4858;
+        }
+    }
+}
+@media screen and (max-width: 932px){
+    .nav {
+        flex-direction: column;
+        .option {
+            justify-content: center;
+        }
+    }
+}
+
+

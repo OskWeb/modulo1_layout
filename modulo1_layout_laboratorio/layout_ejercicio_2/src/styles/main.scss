@@ -1,0 +1,62 @@
+@import 'theme-1';
+
+$box-width: 250px;
+$box-height: 150px;
+$box-padding: 30px;
+$box-border: 1px solid black;
+$font-padding: 10px 0px 10px 0px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    
+    width: 100%;
+    margin: 20px 50px;
+    
+    .box {
+        width: $box-width;
+        height: $box-height;
+        border: $box-border;
+        padding: $box-padding;
+        border-radius: $border-radius;
+        font-family: $font-family-boxes;
+        font-weight: $font-weight;
+    }
+    .group-boxes {
+        
+        
+        .base {
+            background-color: $base-color;
+        }
+        .important {
+            background-color: $important-color;
+        }
+        .warning {
+            background-color: $warning-color;
+        }
+    }
+    .fonts {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        
+        span{
+            padding: $font-padding;
+        }
+        .font-1 {
+            font-family: $font-family-1;
+        }
+        .font-2 {
+            font-family: $font-family-2;
+        }
+    }
+    .box-shadow {
+        box-shadow: $box-shadow;
+    }
+   
+
+}

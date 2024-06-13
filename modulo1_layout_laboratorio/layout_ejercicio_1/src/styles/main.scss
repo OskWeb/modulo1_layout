@@ -1,0 +1,64 @@
+@use "sass:color";
+@import "base";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.box {
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin color-change($container, $base-color) {
+   
+    $i: 4;
+    $percentage: 30;
+
+    @while $i > 0 {
+        
+        .darken-#{$i} {
+            background-color: darken($base-color, $percentage);
+            color: $text-color;
+        }
+        .lighten-#{$i} {
+            background-color: lighten($base-color, $percentage);
+            color: $text-color;
+        }
+        $i: $i - 1;
+        $percentage: $percentage - 7;
+    }
+}
+
+body {
+    
+    $container: 1;
+    @while $container <= 3 {
+        .container-#{$container} {
+            @extend .container;
+            $base-color: nth($colors, $container);
+            @include color-change($container, $base-color);
+            //$base-color: base-color-#{$container};
+            
+            .base-color {
+                width: 200px;
+                background-color: $base-color;
+                color: white;
+            }
+        }
+        $container: $container + 1;
+    }
+}
+
