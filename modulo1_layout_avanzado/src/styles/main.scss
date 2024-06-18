@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+$primary-color: #141414;
+$secondary-color: #FFFFFF;
+$card-mim-width: 225px;
+$card-extend-min-width: 250px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $primary-color;
+    color: $secondary-color;
+    font-family: "Jost", sans-serif;
+    .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+            .header-logo {
+                display: flex;
+                align-items: center;
+                img {
+                    margin-right: 10px;
+                }
+            }
+            .header-buttons {
+                display: flex;
+                div {
+                    margin-left: 30px;
+                    padding: 10px;
+                    border-radius: 3px;
+                }
+                :hover {
+                    background-color: $secondary-color;
+                    color: $primary-color;
+                    cursor: pointer;
+                }
+            }
+        }
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .section-title {
+                #top-text{
+                    font-weight: bold;
+                }
+            }
+            .top {
+                width: 100%;
+                display: flex;
+                
+                .top-item {
+                    flex-grow: 1;
+                    min-width: $card-mim-width;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            .first {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .item {
+                    min-width: $card-extend-min-width;
+                    margin: 4px;
+                    flex-grow: 1;
+                    transition: all 0.3s;
+                    img {
+                        width: 100%;
+                    }
+                }
+                :hover {
+                    width: 400px;
+                }
+                
+            }
+            .second {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .item {
+                    min-width: $card-extend-min-width;
+                    margin: 4px;
+                    flex-grow: 1;
+                    img {
+                        width: 100%;
+                    }
+                }
+                :hover {
+                    width: 400px;
+                }
+            }
+        }
+        
+    }
+
+}
+@media screen and (min-width: 1588px){
+    .first {
+        flex-wrap: nowrap;
+    }
+    .second {
+        flex-wrap: nowrap;
+    }
+}
+
+@media screen and (max-width: 1587px){
+    .first {
+       flex-wrap: wrap;
+    }
+    .second {
+        flex-wrap: wrap;
+    }
+}
+@media screen and (min-width: 1160px){
+    .section-title {
+        #top-text:after {
+            content: '5';
+        }
+    }
+}
+@media screen and (max-width: 1160px){
+    .platform-title {
+        display: none;
+    }
+    
+    .top {
+        .top-item:nth-child(4){
+            display: none;
+        }
+        .top-item:nth-child(5){
+            display: none;
+        }
+    }
+    .section-title {
+        #top-text:after {
+            content: '3';
+        }
+    }
+    
+}
+@media screen and (max-width: 716px){
+    .top {
+        flex-direction: column;
+    }
+}
