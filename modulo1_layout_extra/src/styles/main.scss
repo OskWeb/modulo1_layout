@@ -32,8 +32,6 @@ header {
 
 .page-container {
     display: flex;
-    
-    //overflow: auto;
     .nav {
         position: -webkit-sticky;
         position: sticky;
@@ -81,19 +79,24 @@ header {
                 border: 1px solid black;
                 width: 370px;
                 align-items: center;
-                text-align: center;
+                text-align: left;
                 padding: 20px;
                 border-radius: 5px;
                 background-color: $card-bg-color;
 
                 img {
-                    width: 140px;
+                    display: inline;
+                    width: 100%;
                     border-radius: 50%;
                     margin-bottom: 10px;
+                    max-width: 140px;
                 }
-
+                
+                
                 .member-name {
-                    font-size: 30px;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 24px;
                 }
             }
         }
@@ -153,14 +156,18 @@ footer {
                     width: 100%;
                     flex-direction: row;
                     border-radius: 0;
+                    margin: 0;
                     margin-top: 2px;
                     margin-bottom: 2px;
                     border: none;
-                    
+                    .member-name {
+                        text-align: left;
+                    }
                     img {
                         margin-right: 20px;
                         border-radius: 50%;
                     }
+                    
                 }
             }
         }
